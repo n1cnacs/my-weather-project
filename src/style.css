@@ -1,0 +1,25 @@
+div.app-body {
+  background-color: #51b1a7;
+}
+
+h1 {
+  color: white;
+}
+
+.btn {
+  color: white;
+  background-color: #e1aa37;
+  padding: 10px 30px;
+}
+
+h2 {
+  color: #265d6b;
+}
+
+.this-week {
+  color: grey;
+}
+
+.btn-current {
+  background-color: #265d6b;
+}

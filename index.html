@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/3687bf3aa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    
+  </head>
+  <body>
+    <div class="container">
+        <div class="card app-body">
+            <div class="card-body">
+        
+      <form id="search-form">
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-8">
+        <input
+          type="text"
+        class="form-control"
+          placeholder="Search"
+          autofocus
+          id="search-input";
+        />
+        </div>
+        <div class="col-2">
+        <button type="submit" class="btn">Search</button>
+    </div>
+  <div class="col-2">
+    <button type="submit" class="btn btn-current">Current</button>
+  </div>
+    
+    </div>
+        </div>
+     
+      <h1>Today</h1>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 id="current-city-name">
+            Current City Name
+          </h2>
+          <h2 id="current-temperature">
+            18°C 
+          </h2>
+          <h2>
+            <i class="far fa-sun"></i>
+            </h2>
+        </div>
+      </div>
+
+      <h1>
+        This Week
+      </h1>
+
+      <div class="row">
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body ">Mon <br /><i class="far fa-sun this-week"></i></div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              Tues <br />
+              <i class="far fa-sun this-week"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              Wed <br />
+              <i class="fas fa-cloud-rain this-week"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              Thur <br />
+              <i class="fas fa-cloud-rain this-week"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              Fri <br />
+              <i class="fas fa-cloud-rain this-week"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              Sat <br />
+              <i class="fas fa-cloud-rain this-week"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <script src="src/script.js"></script>
+ 
+  </body>
+</html>
