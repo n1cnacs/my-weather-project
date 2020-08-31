@@ -50,10 +50,12 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 function showTemperature(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
   let conditions = response.data.weather[0].main;
   let currentConditions = document.querySelector("#conditions");
+  let wind = Math.round(response.data.wind.speed);
   currentTemperature.innerHTML = `${temperature}°C`;
-  currentConditions.innerHTML = `${conditions}`;
+  currentConditions.innerHTML = `${conditions} | ${wind} mph`;
 }
