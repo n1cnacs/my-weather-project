@@ -1,3 +1,7 @@
+div.container {
+  max-width: 800px;
+}
+
 div.app-body {
   background-color: #51b1a7;
 }
@@ -12,12 +16,32 @@ h1 {
   padding: 10px 30px;
 }
 
+.current-city {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.current-city .units {
+  font-size: 18px;
+}
+
+.current-city-icon {
+  font-size: 50px;
+}
+
 h2 {
   color: #265d6b;
 }
 
+.conditions-api {
+  margin: 0px;
+  font-size: 18px;
+  color: blue;
+  line-height: 0px;
+}
 .this-week {
   color: grey;
+  font-size: 50px;
 }
 
 .btn-current {

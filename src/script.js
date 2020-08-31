@@ -41,7 +41,8 @@ function search(event) {
   h2.innerHTML = `${searchInput.value}`;
 
   let apiKey = "345722e52259467f443ef34f8686ffec";
-  let apiUrl = `https:api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
+
   axios.get(`${apiUrl}`).then(showTemperature);
 }
 
@@ -51,5 +52,8 @@ form.addEventListener("submit", search);
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
+  let conditions = response.data.weather[0].main;
+  let currentConditions = document.querySelector("#conditions");
   currentTemperature.innerHTML = `${temperature}°C`;
+  currentConditions.innerHTML = `${conditions}`;
 }
