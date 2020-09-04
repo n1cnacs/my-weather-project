@@ -56,6 +56,13 @@ function showTemperature(response) {
   let conditions = response.data.weather[0].main;
   let currentConditions = document.querySelector("#conditions");
   let wind = Math.round(response.data.wind.speed);
+  let currentCityIcon = document.querySelector("#weather-icon");
+
   currentTemperature.innerHTML = `${temperature}°C`;
   currentConditions.innerHTML = `${conditions} | ${wind} mph`;
+  currentCityIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  currentCityIcon.setAttribute("alt", response.data.weather[0].description);
 }
