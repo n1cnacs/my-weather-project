@@ -31,7 +31,7 @@ let timeMinutes = now.getMinutes();
 let timeSeconds = now.getSeconds();
 
 let h1 = document.querySelector("h1");
-h1.innerHTML = `${day} ${month} ${date}, ${year} - ${timeHours}:${timeMinutes}:${timeSeconds}`;
+h1.innerHTML = `${day}, ${date} ${month} ${year} - ${timeHours}:${timeMinutes}`;
 
 function search(event) {
   event.preventDefault();
@@ -52,17 +52,63 @@ form.addEventListener("submit", search);
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
-  let currentTemperature = document.querySelector("#current-temperature");
   let conditions = response.data.weather[0].main;
-  let currentConditions = document.querySelector("#conditions");
   let wind = Math.round(response.data.wind.speed);
+  let humidity = response.data.main.humidity;
+  let feels = Math.round(response.data.main.feels_like);
+
+  let currentTemperature = document.querySelector("#current-temperature");
+  let currentConditions = document.querySelector("#conditions");
+  let windSpeed = document.querySelector("#wind-speed");
+  let currentHumidity = document.querySelector("#humidity");
+  let feelsLike = document.querySelector("#feels-like");
   let currentCityIcon = document.querySelector("#weather-icon");
 
-  currentTemperature.innerHTML = `${temperature}°C`;
-  currentConditions.innerHTML = `${conditions} | ${wind} mph`;
+  celciusTemperature = response.data.main.temp;
+  feelsLikeTemperature = response.data.main.feels_like;
+
+  currentTemperature.innerHTML = `${temperature}`;
+  currentConditions.innerHTML = `${conditions}`;
+  windSpeed.innerHTML = `${wind}km/h`;
+  currentHumidity.innerHTML = `${humidity}%`;
+  feelsLike.innerHTML = `${feels}`;
+
   currentCityIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   currentCityIcon.setAttribute("alt", response.data.weather[0].description);
 }
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  celciusLink.classList.remove("active");
+  temperatureLink.classList.add("active");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+
+  let feelTemperature = document.querySelector("#feels-like");
+  let feelsTemperature = (feelsLikeTemperature * 9) / 5 + 32;
+  feelTemperature.innerHTML = Math.round(feelsTemperature);
+}
+
+function showCelcius(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  celciusLink.classList.add("active");
+  temperatureLink.classList.remove("active");
+  currentTemperature.innerHTML = Math.round(celciusTemperature);
+
+  let feelTemperature = document.querySelector("#feels-like");
+  feelTemperature.innerHTML = Math.round(feelsLikeTemperature);
+}
+
+let celciusTemperature = null;
+let feelsLikeTemperature = null;
+
+let temperatureLink = document.querySelector("#temperature-link");
+temperatureLink.addEventListener("click", showFahrenheit);
+
+let celciusLink = document.querySelector("#temperature-link-c");
+celciusLink.addEventListener("click", showCelcius);

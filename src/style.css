@@ -1,44 +1,117 @@
 div.container {
-  max-width: 800px;
+  max-width: 600px;
 }
 
 div.app-body {
-  background-color: #51b1a7;
+  font-family: "Assistant", sans-serif;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  padding-right: 15px;
 }
 
 h1 {
   color: white;
+  font-size: 25px;
+}
+
+h2 {
+  color: #244160;
+}
+
+h3 {
+  text-align: left;
+}
+
+hr {
+  border: 1px solid white;
+  margin-right: -15px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
 }
 
 .btn {
   color: white;
-  background-color: #e1aa37;
+  background-color: #ec6e4c;
 }
 
+.card-current-city {
+  margin-right: -15px;
+  background-image: linear-gradient(
+    to top,
+    #d5d4d0 0%,
+    #d5d4d0 1%,
+    #eeeeec 31%,
+    #efeeec 75%,
+    #e9e9e7 100%
+  );
+}
 .current-city {
   text-align: center;
   margin-bottom: 0px;
+  padding: 10px;
+}
+
+#current-city-name {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
 }
 
 .current-city .units {
   font-size: 18px;
 }
 
-h2 {
-  color: #265d6b;
+.current-city .active {
+  color: #244160;
+  cursor: default;
+}
+
+.current-city .active:hover {
+  text-decoration: none;
+}
+
+.card {
+  background-image: linear-gradient(
+    to top,
+    #d5d4d0 0%,
+    #d5d4d0 1%,
+    #eeeeec 31%,
+    #efeeec 75%,
+    #e9e9e7 100%
+  );
 }
 
 .conditions-api {
-  margin: 0px;
-  font-size: 18px;
-  color: blue;
+  font-size: 26px;
+  color: #244160;
   line-height: 0px;
+  margin-top: 10px;
 }
 .this-week {
   color: grey;
   font-size: 50px;
 }
 
-.btn-current {
-  background-color: #265d6b;
+#current-temperature {
+  font-size: 120px;
+}
+
+.conditions-format {
+  font-size: 20px;
+  font-weight: bold;
+  color: #244160;
+}
+
+.icon-format {
+  color: #49484a;
+  font-size: 40px;
+}
+
+.open-source {
+  font-weight: bold;
+  color: white;
 }
